@@ -88,6 +88,9 @@ export XDG_MUSIC_DIR="$HOME/mu"
 export XDG_PICTURES_DIR="$HOME/pix"
 export XDG_VIDEOS_DIR="$HOME/vids"
 
+# Use neovim for vim if present
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
 	cp="cp -iv" \
@@ -112,7 +115,8 @@ alias \
 	e="$EDITOR" \
 	v="$EDITOR" \
 	p="sudo pacman" \
-	py="python"
+	py="python" \
+	m="make"
 
 alias \
 	magit="nvim -c MagitOnly"
