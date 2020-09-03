@@ -5,8 +5,8 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'jreybert/vimagit'
-Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'junegunn/goyo.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
 set bg=light
@@ -28,6 +28,24 @@ set wildmenu
 	highlight SpellBad ctermbg=Red
     	highlight Conceal cterm=NONE ctermbg=NONE ctermfg=darkblue
 	call matchadd('ColorColumn', '\%101v', 100)
+
+" C/C++ Style
+	autocmd BufNewFile,BufRead *.cpp,*.cc,*.c,*.h
+		\ set tabstop=2 |
+		\ set softtabstop=2 |
+		\ set shiftwidth=2 |
+		\ set textwidth=119 |
+		\ set expandtab |
+		\ set autoindent |
+		\ set fileformat=unix
+	let g:cpp_experimental_template_highlight = 1
+	let g:cpp_member_variable_highlight = 1
+	let g:cpp_class_decl_highlight = 1
+	let g:cpp_posix_standard = 1
+	let g:cpp_experimental_template_highlight = 1
+    	highlight cppSTLnamespace ctermfg=DarkMagenta
+    	highlight cppSTLconstant ctermfg=DarkMagenta
+
 
 " File Browsing without plugins
 	let g:netrw_banner=0		" disables annoying banner
